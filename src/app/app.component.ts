@@ -1,4 +1,6 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
+import { LoadingService } from './service/loading/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular12-Quiz';
+   loading$=this.loader.loading$
+  constructor(public loader:LoadingService){}
 }

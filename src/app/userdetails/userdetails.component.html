@@ -1,0 +1,26 @@
+  <div class="card" style="text-align: center;" >
+        <h1 class="card-header" style=" width: 50%; margin: auto;">User Details</h1>
+        <div class="card-body">
+            <div class="container" style="border-style:initial">
+
+            <div class="row ">
+                    <div class="col-md-3" style="width: 500px;">
+                        <img [src]="userdata.data.avatar"  style="width: 300px; height: 300px;">
+                        </div>
+
+                        <div class="col-md-3 " style="width: 400px; margin-bottom: 20px;" >
+                            <p  ><strong>ID:</strong> {{userdata.data.id}}</p><br>
+                            <P ><strong>FIRST NAME:</strong>{{userdata.data.first_name}}</P><br>
+                            <P ><strong>LAST NAME:</strong>{{userdata.data.last_name}}</P> <br>
+                            <P ><strong>EMAIL:</strong>{{userdata.data.email}}</P><br>
+                        </div>
+
+                </div>
+
+        </div>
+        <a style="margin-top: 20px ; width: 200px;"  class="btn btn-primary" (click)="goback()">Back To Home</a>
+
+        </div>
+      </div>
+
+    

@@ -1,0 +1,44 @@
+
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+    
+    
+            <input class="form-control me-2"  [(ngModel)]="searchid" (keyup)="search(searchid)"  style="width: 400px;" placeholder="Search ByID..." >
+    
+    
+        </div>
+      </nav>
+</header>
+
+<div class=" container">
+    <div class="row ">
+        <ng-container *ngFor="let item of dataItems | filter:searchid | paginate: { itemsPerPage: 3, currentPage: p } ">
+
+        <div class="card col-md-12">
+
+            <a (click)="singleuser(item.id)" class="btn btn-light">
+            <img src={{item.avatar}} alt="Avatar" class="avatar">
+           <div class="row ">
+           
+            <p style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; max-width: 100ch;">
+            <strong> First Name:</strong>{{item.first_name}}
+            </p>
+             <p style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; max-width: 100ch;">
+              <strong>Last Name:</strong>{{item.last_name}}
+             </p>
+            <p style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; max-width: 100ch;">
+            <strong>ID:</strong>{{item.id}}
+            </p>
+        </div>
+        </a>
+
+    </div>
+
+</ng-container>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
+</div>
+
+
